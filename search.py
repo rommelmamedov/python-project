@@ -1,4 +1,4 @@
-from database import searchByInDB
+from database import queryDataBaseByFieldName
 from helpers import confirm, goToMenu, printErrorMessage, printInfoMessage
 
 
@@ -13,7 +13,7 @@ def searchBookMenu():
 
 
 def searchBy(field):
-    searchByInDB(field)
+    queryDataBaseByFieldName(field)
     if confirm(f'\nDo you want to continue your search by {field}? [Yes/No or Y/N]: '):
         searchBy(field)
     else: 

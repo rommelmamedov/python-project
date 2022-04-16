@@ -4,9 +4,9 @@ COMP 2152 - Open Source Development - Term Project
 Lab Professor: Mr. Hesham Akbari
 """
 
-from searchBook import searchBook
-from makePurchase import makePurchase
-from generateReceipt import generateReceipt
+from search import searchBook
+from purchase import makePurchase
+from receipt import generateReceipt
 from database import initializeDatabase
 from helpers import goToMenu, printInfoMessage, printErrorMessage
 
@@ -37,7 +37,7 @@ def menu():
 
 def main():
     print("\nWelcome to the library program!")
-
+    purchase_list = []
     initializeDatabase()
 
     while True:
@@ -47,7 +47,7 @@ def main():
             if not goToMenu():
                 break
         elif choice == '2':
-            makePurchase()
+            makePurchase(purchase_list)
             if not goToMenu():
                 break
         elif choice == '3':

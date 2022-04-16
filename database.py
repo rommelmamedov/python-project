@@ -26,7 +26,7 @@ def initializeDatabase():
     except Exception as exception:
         printErrorMessage(exception, 'Database initialization error.')
 
-def searchByInDB(field):
+def queryDataBaseByFieldName(field):
     try:
         connection = sqlite3.connect('library.db')
         cursor = connection.cursor()
@@ -48,3 +48,23 @@ def searchByInDB(field):
     except Exception as exception:
         printErrorMessage(exception, 'Database initialization error.')
 
+def getAvailableBooksByLimit(limit = 10):
+    try:
+        connection = sqlite3.connect('library.db')
+        cursor = connection.cursor()
+        cursor.execute(f"SELECT * FROM books LIMIT {limit}")
+        searchResult = []
+        for row in cursor.fetchall():
+             searchResult.append(list(row))
+
+        connection.close()
+
+        printInfoMessage(f'\n — — — — — — — — — — — — — — — — — — — — — — Top {limit} Books  — — — — — — — — — — — — — — — — — — — — —\n')
+        for ID, title, author, ISBN, category in searchResult:
+            printSuccessMessage(f'[ID: {ID}] Title: {title}, ISBN: {ISBN}, Author: {author} Category: {category}.')
+        printInfoMessage(f'\n — — — — — — — — — — — — — — — — — — — — — — Top {limit} Books  — — — — — — — — — — — — — — — — — — — — —\n')
+
+
+        return searchResult
+    except Exception as exception:
+        printErrorMessage(exception, 'Database initialization error.')

@@ -26,18 +26,6 @@ def getValidIntegerValue(prompt, fieldName):
         printErrorMessage(f"Please provide a valid interger value for {fieldName}.")
         return getValidIntegerValue(prompt, fieldName)
 
-def getValidNumericValue(prompt, fieldName):
-    inputValue = input(prompt).strip()
-    if inputValue == 'no': return 'no'
-
-    try:
-        float(inputValue)
-    except ValueError:
-        printErrorMessage(f"Please provide a valid numeric value for {fieldName}.")
-        return getValidNumericValue(prompt, fieldName)
-    else: 
-        if float(inputValue).is_integer(): return int(float(inputValue))
-        else: return float(inputValue)
 
 # Reusable confirmation function
 def confirm(message):
@@ -54,9 +42,8 @@ def goToMenu():
     return confirm('\nDo you want to go back into main menu? [Yes/No or Y/N]: ')
 
 # Recursive function to get valid and unique value from user.
-def getValidIdentifier(list, fieldIndex, fieldName):
-    value = getValidIntegerValue(f'Please input {fieldName}: ', fieldName)
-    if value == 'no': return 'no'
+def getBookByID(list, fieldIndex):
+    value = getValidIntegerValue(f'Please select ID of the book you want to purchase: ', 'book ID')
     
     for item in list:
         if value == item[fieldIndex]:
@@ -64,8 +51,8 @@ def getValidIdentifier(list, fieldIndex, fieldName):
         else:
             continue
 
-    printWarningMessage(f"{fieldName.capitalize()}: '{value}' does not exists in the list. Please correct value for {fieldName}.")
-    return getValidIdentifier(list, fieldIndex, fieldName)
+    printWarningMessage(f"Book with does not exists in the database. Please correct value for book ID.")
+    return getBookByID(list, fieldIndex)
 
 def getValidAndUniqueValue(list, fieldIndex, fieldName):
     value = getValidIntegerValue(f'Please input {fieldName}: ', fieldName)

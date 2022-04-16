@@ -1,5 +1,4 @@
 import sqlite3
-
 from helpers import printErrorMessage, printInfoMessage, printSuccessMessage
 
 def initializeDatabase():

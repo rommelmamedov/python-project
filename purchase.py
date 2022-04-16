@@ -5,7 +5,7 @@ from helpers import confirm,  getBookByID, printInfoMessage, printSuccessMessage
 def makePurchase(purchase_list):
     current_purchase_list = purchase_list
     availableBooks = getAvailableBooksByLimit(10)
-    current_purchase_list.append(getBookByID(availableBooks, 0))
+    current_purchase_list.append(getBookByID(availableBooks))
 
     if confirm('\nDo you want to confirm purchase and generate the receipt? [Yes/No or Y/N]: '):
         # updatedEmployees = updateEmployeeList(employeeDiscountNumber, currentEmployees, totalPurchased, totalDiscounts)

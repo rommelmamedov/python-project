@@ -1,7 +1,6 @@
 from database import queryDataBaseByFieldName
 from helpers import confirm, goToMenu, printErrorMessage, printInfoMessage
 
-
 def searchBookMenu():
     printInfoMessage('— — — — — — — — — — — — — — —')
     printInfoMessage('| 1 - Search by title.       |')
@@ -11,7 +10,6 @@ def searchBookMenu():
     printInfoMessage('— — — — — — — — — — — — — — —')
     return input('\nPlease choose one of the following search options (1, 2, 3, 4): ')
 
-
 def searchBy(field):
     queryDataBaseByFieldName(field)
     if confirm(f'\nDo you want to continue your search by {field}? [Yes/No or Y/N]: '):
@@ -19,7 +17,6 @@ def searchBy(field):
     else: 
         if not goToMenu(): 
             searchBook()
-
     return
 
 def searchBook():

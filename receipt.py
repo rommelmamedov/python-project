@@ -1,4 +1,4 @@
-from helpers import confirm, getValidNameFieldValue, getValidAndUniqueValue, printSuccessMessage, printInfoMessage
+from helpers import confirm,  getValidAndUniqueValue, printSuccessMessage, printInfoMessage
 
 
 '''

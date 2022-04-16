@@ -4,9 +4,9 @@ COMP 2152 - Open Source Development - Term Project
 Lab Professor: Mr. Hesham Akbari
 """
 
-from search import searchBook
-from purchase import makePurchase
-from receipt import generateReceipt
+from search import search
+from receipt import receipt
+from purchase import purchase
 from database import initializeDatabase
 from helpers import goToMenu, printInfoMessage, printErrorMessage
 
@@ -18,11 +18,11 @@ from helpers import goToMenu, printInfoMessage, printErrorMessage
 # 3. Should make use of files to save the data. [15]
 # 4. Should handle adequate exceptions. [7]
 # 5. Should display information formatted adequately. [8]
-# 6. Should make use of lists or dictionaries as appropriate. [15]
-# 7. Should follow adequate naming conventions for variables and functions, and should have comments as appropriate. [5]
+#* 6. Should make use of lists or dictionaries as appropriate. [15]
+#* 7. Should follow adequate naming conventions for variables and functions, and should have comments as appropriate. [5]
 # 
 # Intermediate:
-# 8. Should use an object-oriented approach, (inheritance is optional). [10]
+#* 8. Should use an object-oriented approach, (inheritance is optional). [10]
 #* 9. Should use a database. [15]
 
 def menu():
@@ -36,22 +36,22 @@ def menu():
 
 
 def main():
-    print("\nWelcome to the library program!")
-    purchase_list = []
     initializeDatabase()
+    purchased_book_id_list = []
+    print("\nWelcome to the library program!")
 
     while True:
         choice = menu()
         if choice == '1':
-            searchBook()
+            search()
             if not goToMenu():
                 break
         elif choice == '2':
-            makePurchase(purchase_list)
+            purchased_book_id_list = purchase(purchased_book_id_list)
             if not goToMenu():
                 break
         elif choice == '3':
-            generateReceipt()
+            receipt(purchased_book_id_list)
             if not goToMenu():
                 break
         elif choice == '4':
@@ -59,6 +59,5 @@ def main():
             break
         else:
             printErrorMessage('Invalid option! Please select again.')
-
 
 main()

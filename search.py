@@ -16,10 +16,10 @@ def searchBy(field):
         searchBy(field)
     else: 
         if not goToMenu(): 
-            searchBook()
+            search()
     return
 
-def searchBook():
+def search():
     printInfoMessage('\nBook seaching menu:\n')
 
     while True:

@@ -37,23 +37,20 @@ def menu():
 
 def main():
     initializeDatabase()
-    purchased_book_id_list = []
+    purchasedBooksIdList = []
     print("\nWelcome to the library program!")
 
     while True:
         choice = menu()
         if choice == '1':
             search()
-            if not goToMenu():
-                break
+            if not goToMenu(): break
         elif choice == '2':
-            purchased_book_id_list = purchase(purchased_book_id_list)
-            if not goToMenu():
-                break
+            purchasedBooksIdList = purchase(purchasedBooksIdList)
+            if not goToMenu():  break
         elif choice == '3':
-            receipt(purchased_book_id_list)
-            if not goToMenu():
-                break
+            purchasedBooksIdList = receipt(purchasedBooksIdList)
+            if not goToMenu(): break
         elif choice == '4':
             printInfoMessage('Thanks for using our program!')
             break

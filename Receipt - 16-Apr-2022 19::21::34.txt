@@ -1,0 +1,9 @@
+
+Thank you for your purchase!
+
+Purchase date and time: 16-Apr-2022 19::21::34
+
+Books: Book ID: 1, Title: In Search of Lost Time, ISBN: Marcel Proust, Author: 142437964 Category: Modernist.
+Book ID: 2, Title: Ulysses, ISBN: James Joyce, Author: 1840226358 Category: Modernist novel.
+Book ID: 7, Title: War and Peace, ISBN: Lev Tolstoy, Author: 1400079985 Category: Novel.
+        

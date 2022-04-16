@@ -13,17 +13,17 @@ from helpers import goToMenu, printInfoMessage, printErrorMessage
 # Library: users should be able to search for books by title or by author, should be able to search by book category (fiction, non-fiction, autobiographies, travel, etc.). The user should be able to purchase one or more books in any combination of authors, titles, categories, etc. The application should generate and display a receipt stating the list of books selected and their return due dates.
 
 # Basic:
-#* 1. Should have a functioning menu. [10]
+# 1. Should have a functioning menu. [10]
 # 2. Should have adequate functions (minimum 3 functions). [15]
 # 3. Should make use of files to save the data. [15]
 # 4. Should handle adequate exceptions. [7]
 # 5. Should display information formatted adequately. [8]
-#* 6. Should make use of lists or dictionaries as appropriate. [15]
-#* 7. Should follow adequate naming conventions for variables and functions, and should have comments as appropriate. [5]
-# 
+# 6. Should make use of lists or dictionaries as appropriate. [15]
+# 7. Should follow adequate naming conventions for variables and functions, and should have comments as appropriate. [5]
+
 # Intermediate:
-#* 8. Should use an object-oriented approach, (inheritance is optional). [10]
-#* 9. Should use a database. [15]
+# 8. Should use an object-oriented approach, (inheritance is optional). [10]
+# 9. Should use a database. [15]
 
 def menu():
     printInfoMessage('— — — — — — — — — — — — — — —')

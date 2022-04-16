@@ -2,7 +2,6 @@ from helpers import confirm
 from datetime import datetime
 from database import getAvailableBooks
 
-
 '''
 ----------------------UML-------------------
 - Name: Receipt
